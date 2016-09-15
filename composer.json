@@ -1,0 +1,10 @@
+{
+    "name": "andreyash/sample-products",
+    "authors": [
+        {
+            "name": "Andrey Ashgaliyev",
+            "email": "a.ashgaliev@gmail.com"
+        }
+    ],
+    "require": {}
+}
