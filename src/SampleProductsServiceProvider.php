@@ -15,9 +15,11 @@ class SampleProductsServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/views', 'sample-products');
 
-        $this->publishes([
-            realpath(__DIR__.'/migrations') => $this->app->databasePath().'/migrations'
-        ]);
+        $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
+
+        if (! $this->app->routesAreCached()) {
+            require __DIR__.'/routes.php';
+        }
     }
 
     /**
@@ -27,7 +29,6 @@ class SampleProductsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__.'/routes.php';
         $this->app->make('AndreyAsh\SampleProducts\SampleProductsController');
     }
 }

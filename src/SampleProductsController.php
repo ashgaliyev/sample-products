@@ -15,7 +15,7 @@ class SampleProductsController extends Controller
 
   public function __construct()
   {
-    $this->middleware('auth');
+    //$this->middleware('auth');
   }
 
   public function index()
@@ -44,14 +44,14 @@ class SampleProductsController extends Controller
 
     if ($this->app('current_user_type') == 'admin')
     {
-      $validator = Validator::make($request->all()), [
+      $validator = Validator::make($request->all(), [
         'name' => 'required|min:10',
         'art'  => 'required|unique:sample_products|regex:[A-Za-z0-9]'
       ]);
 
     } elseif ($this->app('current_user_type') == 'manager')
     {
-      $validator = Validator::make($request->all()), [
+      $validator = Validator::make($request->all(), [
         'name' => 'required|min:10',
       ]);
 
