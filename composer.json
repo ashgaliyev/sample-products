@@ -6,7 +6,9 @@
             "email": "a.ashgaliev@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/support": "~5"
+    },
     "autoload": {
         "psr-4": {
             "AndreyAsh\\SampleProducts\\": "src/"
