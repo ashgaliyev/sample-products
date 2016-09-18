@@ -13,7 +13,7 @@ class SampleProductsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'sample-products');
+        $this->loadViewsFrom(__DIR__.'/views', 'sample-product');
 
         $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
 
